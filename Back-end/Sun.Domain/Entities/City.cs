@@ -22,7 +22,8 @@ namespace Sun.Domain
         /// <summary>
         /// Construtor para ser criado uma entidade Cidade
         /// </summary>
-        /// <param name="name">Nome da cidade</param>
+        /// <param name="name">Nome da
+        /// cidade</param>
         /// <param name="weathers">Lista de temperaturas</param>
         public City(string name, ICollection<Weather> weathers)
         {

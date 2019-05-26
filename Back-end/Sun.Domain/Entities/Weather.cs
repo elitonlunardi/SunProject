@@ -9,7 +9,7 @@ namespace Sun.Domain
     public class Weather : Entity
     {
         /// <summary>
-        /// Data da temperatura
+        /// Data da temperatura.
         /// </summary>
         public DateTime Date { get; set; }
         /// <summary>
@@ -25,8 +25,8 @@ namespace Sun.Domain
         /// Construtor para ser criado uma entidade Temperatura.
         /// </summary>
         /// <param name="date">Data da temperatura</param>
-        /// <param name="minimum">Temperatura mínima do dia</param>
-        /// <param name="maximum">Temperatura máxima do dia</param>
+        /// <param name="minimum">Temperatura mínima do dia.</param>
+        /// <param name="maximum">Temperatura máxima do dia.</param>
         public Weather(DateTime date, double minimum, double maximum)
         {
             Date = date;
@@ -34,7 +34,7 @@ namespace Sun.Domain
             Maximum = maximum;
         }
         /// <summary>
-        /// Construtor sem parâmetros protected para o entity
+        /// Construtor sem parâmetros protected para o entity.
         /// </summary>
         protected Weather() { }
 
