@@ -1,5 +1,4 @@
 {
-  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -23,11 +22,7 @@
               "src/assets"
             ],
             "styles": [
-              "../node_modules/bootstrap/dist/css/bootstrap.css",
-              "styles.css"
-            ],
-            "scripts": [
-              "../node_modules/bootstrap/dist/js/bootstrap.min.js"
+              "node_modules/bootstrap/dist/css/bootstrap.css"
             ]
           },
           "configurations": {
@@ -67,24 +62,8 @@
             "browserTarget": "SunProject:build"
           }
         },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.spec.json",
-            "karmaConfig": "src/karma.conf.js",
-            "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.css"
-            ],
-            "scripts": [],
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ]
-          }
-        },
+        
+
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
