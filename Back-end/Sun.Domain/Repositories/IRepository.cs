@@ -10,9 +10,10 @@ namespace Sun.Domain
     public interface IRepository<TEntity> : IDisposable where TEntity : class
     {
         void Add(TEntity obj);
+        void Update(TEntity obj);
+        void Remove(Guid id);
         TEntity GetById(Guid id);
         IQueryable<TEntity> GetAll();
-        void Update(TEntity obj);
         int SaveChanges();
     }
 }

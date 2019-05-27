@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Sun.Domain;
+using Sun.Infra.Data.Mappings;
 
 namespace Sun.Infra
 {
@@ -19,9 +19,12 @@ namespace Sun.Infra
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder.ApplyConfiguration(new MusicMapping());
-            //modelBuilder.ApplyConfiguration(new AlbumMapping());
-            //modelBuilder.ApplyConfiguration(new BandMapping());
+            modelBuilder.ApplyConfiguration(new CityMap());
+            modelBuilder.ApplyConfiguration(new WeatherMap());
+
+            //modelBuilder.RemovePluralizing
+
+
         }
     }
 }

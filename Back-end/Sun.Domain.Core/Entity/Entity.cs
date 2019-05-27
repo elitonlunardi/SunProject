@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Sun.Domain.Core
 {
@@ -10,14 +11,17 @@ namespace Sun.Domain.Core
         /// <summary>
         /// Guid da entidade
         /// </summary>
-        public Guid Id { get;  set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public Guid Id { get; set; }
         /// <summary>
         /// Data de cadastro
         /// </summary>
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public DateTime CreationDate { get; set; }
         /// <summary>
         /// Data de atualização
         /// </summary>
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime? UpdateDate { get; set; }
 
         /// <summary>
@@ -35,6 +39,6 @@ namespace Sun.Domain.Core
             return Id.Equals(compareTo.Id);
         }
 
-        
+
     }
 }

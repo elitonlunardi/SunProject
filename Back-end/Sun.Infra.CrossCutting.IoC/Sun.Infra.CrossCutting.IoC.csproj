@@ -1,7 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <IsPackable>true</IsPackable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Sun.Application\Sun.Application.csproj" />
+    <ProjectReference Include="..\Sun.Domain.Core\Sun.Domain.Core.csproj" />
+    <ProjectReference Include="..\Sun.Domain\Sun.Domain.csproj" />
+    <ProjectReference Include="..\Sun.Infra.CrossCutting.Rest\Sun.Infra.CrossCutting.Rest.csproj" />
+    <ProjectReference Include="..\Sun.Infra.Data\Sun.Infra.Data.csproj" />
+  </ItemGroup>
 
 </Project>

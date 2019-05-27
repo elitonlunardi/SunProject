@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using Sun.Domain.Core;
 
 namespace Sun.Domain
@@ -13,7 +15,9 @@ namespace Sun.Domain
         /// <summary>
         /// Nome da cidade
         /// </summary>
+        [MaxLength(150)]
         public string Name { get; set; }
+
         /// <summary>
         /// Lista de temperaturas da cidade
         /// </summary>
@@ -27,6 +31,8 @@ namespace Sun.Domain
         /// <param name="weathers">Lista de temperaturas</param>
         public City(string name, ICollection<Weather> weathers)
         {
+            Id = Guid.NewGuid();
+            CreationDate = DateTime.Now;
             Name = name;
             Weathers = weathers;
         }

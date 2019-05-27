@@ -21,6 +21,9 @@ namespace Sun.Domain
         /// </summary>
         public double Maximum { get; set; }
 
+        public Guid CityId { get; set; }
+        public virtual City City { get; set; }
+
         /// <summary>
         /// Construtor para ser criado uma entidade Temperatura.
         /// </summary>
@@ -29,6 +32,8 @@ namespace Sun.Domain
         /// <param name="maximum">Temperatura máxima do dia.</param>
         public Weather(DateTime date, double minimum, double maximum)
         {
+            Id = Guid.NewGuid();
+            CreationDate = DateTime.Now;
             Date = date;
             Minimum = minimum;
             Maximum = maximum;
