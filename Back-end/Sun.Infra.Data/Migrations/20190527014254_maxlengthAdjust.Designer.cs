@@ -10,8 +10,8 @@ using Sun.Infra;
 namespace Sun.Infra.Data.Migrations
 {
     [DbContext(typeof(SunContext))]
-    [Migration("20190527005533_addmapping")]
-    partial class addmapping
+    [Migration("20190527014254_maxlengthAdjust")]
+    partial class maxlengthAdjust
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -34,7 +34,7 @@ namespace Sun.Infra.Data.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnName("Name")
-                        .HasColumnType("VarChar")
+                        .HasColumnType("varchar(100)")
                         .HasMaxLength(150);
 
                     b.Property<DateTime?>("UpdateDate")
@@ -63,12 +63,8 @@ namespace Sun.Infra.Data.Migrations
                         .HasColumnName("Date")
                         .HasColumnType("DateTime");
 
-                    b.Property<double>("Maximum")
-                        .HasColumnName("Maximum")
-                        .HasColumnType("Float");
-
-                    b.Property<double>("Minimum")
-                        .HasColumnName("Minimum")
+                    b.Property<double>("Media")
+                        .HasColumnName("Media")
                         .HasColumnType("Float");
 
                     b.Property<DateTime?>("UpdateDate")

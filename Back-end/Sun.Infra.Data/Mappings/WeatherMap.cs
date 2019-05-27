@@ -13,7 +13,6 @@ namespace Sun.Infra.Data.Mappings
 
             builder.HasKey(w => w.Id);
 
-
             builder.Property(w => w.CreationDate)
                .HasColumnName("CreationDate")
                .HasColumnType(SqlDbType.DateTime.ToString())
@@ -29,13 +28,8 @@ namespace Sun.Infra.Data.Mappings
                 .HasColumnType(SqlDbType.DateTime.ToString())
                 .IsRequired(true);
 
-            builder.Property(w => w.Minimum)
-                .HasColumnName("Minimum")
-                .HasColumnType(SqlDbType.Float.ToString())
-                .IsRequired(true);
-
-            builder.Property(w => w.Maximum)
-                .HasColumnName("Maximum")
+            builder.Property(w => w.Media)
+                .HasColumnName("Media")
                 .HasColumnType(SqlDbType.Float.ToString())
                 .IsRequired(true);
 

@@ -15,7 +15,6 @@ namespace Sun.Domain
         /// <summary>
         /// Nome da cidade
         /// </summary>
-        [MaxLength(150)]
         public string Name { get; set; }
 
         /// <summary>
@@ -36,6 +35,16 @@ namespace Sun.Domain
             Name = name;
             Weathers = weathers;
         }
+
+        public void AddWeather(Weather w)
+        {
+            if (Weathers == null)
+            {
+                Weathers = new List<Weather>();
+            }
+            Weathers.Add(w);
+        }
+
         /// <summary>
         /// Construtor sem parâmetros protected para o entity
         /// </summary>

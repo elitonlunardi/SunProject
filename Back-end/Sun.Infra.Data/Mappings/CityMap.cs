@@ -26,11 +26,11 @@ namespace Sun.Infra.Data.Mappings
 
             builder.Property(c => c.Name)
                 .HasColumnName("Name")
+                .HasColumnType("varchar(100)")
                 .HasMaxLength(150)
-                .HasColumnType(SqlDbType.VarChar.ToString())
                 .IsRequired(true);
 
-            
+
         }
     }
 }

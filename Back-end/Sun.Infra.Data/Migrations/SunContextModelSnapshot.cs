@@ -32,7 +32,7 @@ namespace Sun.Infra.Data.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnName("Name")
-                        .HasColumnType("VarChar")
+                        .HasColumnType("varchar(100)")
                         .HasMaxLength(150);
 
                     b.Property<DateTime?>("UpdateDate")
@@ -61,12 +61,8 @@ namespace Sun.Infra.Data.Migrations
                         .HasColumnName("Date")
                         .HasColumnType("DateTime");
 
-                    b.Property<double>("Maximum")
-                        .HasColumnName("Maximum")
-                        .HasColumnType("Float");
-
-                    b.Property<double>("Minimum")
-                        .HasColumnName("Minimum")
+                    b.Property<double>("Media")
+                        .HasColumnName("Media")
                         .HasColumnType("Float");
 
                     b.Property<DateTime?>("UpdateDate")

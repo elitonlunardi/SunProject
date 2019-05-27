@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Sun.Infra.Data.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class initialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,9 +12,9 @@ namespace Sun.Infra.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
-                    CreationDate = table.Column<DateTime>(nullable: false),
-                    UpdateDate = table.Column<DateTime>(nullable: true),
-                    Name = table.Column<string>(nullable: true)
+                    CreationDate = table.Column<DateTime>(type: "DateTime", nullable: false),
+                    UpdateDate = table.Column<DateTime>(type: "DateTime", nullable: true),
+                    Name = table.Column<string>(type: "VarChar", maxLength: 150, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -26,13 +26,11 @@ namespace Sun.Infra.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
-                    CreationDate = table.Column<DateTime>(nullable: false),
-                    UpdateDate = table.Column<DateTime>(nullable: true),
-                    Date = table.Column<DateTime>(nullable: false),
-                    Minimum = table.Column<double>(nullable: false),
-                    Maximum = table.Column<double>(nullable: false),
-                    IdCity = table.Column<Guid>(nullable: true),
-                    CityId = table.Column<Guid>(nullable: true)
+                    CreationDate = table.Column<DateTime>(type: "DateTime", nullable: false),
+                    UpdateDate = table.Column<DateTime>(type: "DateTime", nullable: true),
+                    Date = table.Column<DateTime>(type: "DateTime", nullable: false),
+                    Media = table.Column<double>(type: "Float", nullable: false),
+                    CityId = table.Column<Guid>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -42,7 +40,7 @@ namespace Sun.Infra.Data.Migrations
                         column: x => x.CityId,
                         principalTable: "Cities",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(

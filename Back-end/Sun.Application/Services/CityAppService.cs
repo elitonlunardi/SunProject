@@ -23,20 +23,23 @@ namespace Sun.Application
 
         public void Add(CityViewModel cityViewModel)
         {
-            var request = _restClient.GetMethod("brusque");
+
+            var z = "São Joaquim";
+            cityViewModel.Name = z;
+            var request = _restClient.GetMethod(z);
             var group = request.list.GroupBy(c => c.dt_txt.Date);
             var media = group.Select(c => new
             {
                 Data = c.Key,
-                MediaTemp = c.Sum(a => a.main.temp) / c.Count()
+                MediaWeather = c.Sum(a => a.main.temp) / c.Count()
             });
 
             var entity = _mapper.Map<City>(cityViewModel);
-            entity.Weathers = new List<Weather>
-            {
-                new Weather(DateTime.Now, 20.0, 35.0),
-                new Weather(DateTime.Now.AddDays(-5), 35.0, 40.0)
-            };
+            media.ToList().ForEach(a => entity.AddWeather(new Weather(a.Data, a.MediaWeather)));
+            //foreach (var weather in media)
+            //{
+            //    entity.AddWeather(new Weather(weather.Data, weather.MediaWeather));
+            //}
             _cityRepository.Add(entity);
             _cityRepository.SaveChanges();
         }

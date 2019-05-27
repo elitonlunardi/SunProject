@@ -2,17 +2,19 @@
 
 namespace Sun.Infra.Data.Migrations
 {
-    public partial class DomainMaxLength : Migration
+    public partial class maxlengthAdjust : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AlterColumn<string>(
                 name: "Name",
                 table: "Cities",
+                type: "varchar(100)",
                 maxLength: 150,
-                nullable: true,
+                nullable: false,
                 oldClrType: typeof(string),
-                oldNullable: true);
+                oldType: "VarChar",
+                oldMaxLength: 150);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -20,10 +22,12 @@ namespace Sun.Infra.Data.Migrations
             migrationBuilder.AlterColumn<string>(
                 name: "Name",
                 table: "Cities",
-                nullable: true,
+                type: "VarChar",
+                maxLength: 150,
+                nullable: false,
                 oldClrType: typeof(string),
-                oldMaxLength: 150,
-                oldNullable: true);
+                oldType: "varchar(100)",
+                oldMaxLength: 150);
         }
     }
 }

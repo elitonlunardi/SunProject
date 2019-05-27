@@ -10,8 +10,8 @@ using Sun.Infra;
 namespace Sun.Infra.Data.Migrations
 {
     [DbContext(typeof(SunContext))]
-    [Migration("20190526192022_addedMappings")]
-    partial class addedMappings
+    [Migration("20190527013919_initialCreate")]
+    partial class initialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -63,12 +63,8 @@ namespace Sun.Infra.Data.Migrations
                         .HasColumnName("Date")
                         .HasColumnType("DateTime");
 
-                    b.Property<double>("Maximum")
-                        .HasColumnName("Maximum")
-                        .HasColumnType("Float");
-
-                    b.Property<double>("Minimum")
-                        .HasColumnName("Minimum")
+                    b.Property<double>("Media")
+                        .HasColumnName("Media")
                         .HasColumnType("Float");
 
                     b.Property<DateTime?>("UpdateDate")

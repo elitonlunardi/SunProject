@@ -26,43 +26,21 @@ namespace Sun.Api.Controllers
         {
 
 
-            HttpClient client = new HttpClient();
-            client.Timeout = new TimeSpan(0, 2, 0);
+            //HttpClient client = new HttpClient();
+            //client.Timeout = new TimeSpan(0, 2, 0);
 
-            var request = new HttpRequestMessage
-            {
-                Method = HttpMethod.Get,
-                RequestUri = new Uri("http://api.openweathermap.org/data/2.5/forecast?q=brusque,br&appId=31cea044be81ac381a55a8e2ada47788&units=metric")
-
-            };
-            //http://api.openweathermap.org/data/2.5/forecast?q=brusque,br&appId=31cea044be81ac381a55a8e2ada47788&units=metric
-            //http://api.openweathermap.org/data/2.5/forecast?q={RestOptions.City},{RestOptions.Country}&appId={ApiKey}&units=metric
-            var answer = await client.SendAsync(request).ConfigureAwait(false);
-            answer.EnsureSuccessStatusCode();
-            var responseBody = await answer.Content.ReadAsStringAsync().ConfigureAwait(false);
-            var json = JsonConvert.DeserializeObject<OpenWeatherModel>(responseBody);
-
-            
-
-
-
-
-
-            //var somaTemp = 0;
-            //foreach (var item in a)
+            //var request = new HttpRequestMessage
             //{
-            //    somaTemp += Convert.ToInt32(item.temp);
-            //}
+            //    Method = HttpMethod.Get,
+            //    RequestUri = new Uri("http://api.openweathermap.org/data/2.5/forecast?q=brusque,br&appId=31cea044be81ac381a55a8e2ada47788&units=metric")
 
-
-            //var temps = a.Sum(z => Convert.ToInt32(z.temp));
-
-            //.ConfigureAwait(true);
-            //return responseBody;
-
-            //Rest r = new Rest(new RestOptions("brusque", "br"));
-            //var response = r.GetMethod();
-            //var b = 1 + 1;
+            //};
+            ////http://api.openweathermap.org/data/2.5/forecast?q=brusque,br&appId=31cea044be81ac381a55a8e2ada47788&units=metric
+            ////http://api.openweathermap.org/data/2.5/forecast?q={RestOptions.City},{RestOptions.Country}&appId={ApiKey}&units=metric
+            //var answer = await client.SendAsync(request).ConfigureAwait(false);
+            //answer.EnsureSuccessStatusCode();
+            //var responseBody = await answer.Content.ReadAsStringAsync().ConfigureAwait(false);
+            //var json = JsonConvert.DeserializeObject<OpenWeatherModel>(responseBody);
             _cityService.Add(new CityViewModel { Id = Guid.NewGuid(), Name = "teste" });
             return new string[] { "value1", "value2" };
         }
