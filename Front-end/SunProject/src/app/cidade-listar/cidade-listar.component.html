@@ -3,26 +3,18 @@
     <table class=" table table-striped">
       <thead>
         <tr>
-          <th scope="col">#</th>
+          <th scope="col">Id da cidade</th>
           <th scope="col">Nome da cidade</th>
+          <th scope="col">Data da criação</th>
           <th scope="col"></th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td><a href="#">Detalhes</a></td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td><a href="#">Detalhes</a></td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td><a href="#">Detalhes</a></td>
+        <tr *ngFor="let cidade of cidades">
+          <td>{{cidade.id}}</td>
+          <td>{{cidade.name}}</td>
+          <td>{{cidade.creationDate | date:'dd/MM/yyyy hh:mm:ss' }}</td>
+          <td> <button (click)="this.openModal(cidade.id)" class="btn btn-primary" type="button">Detalhes</button> </td>
         </tr>
       </tbody>
     </table>

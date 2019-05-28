@@ -20,31 +20,6 @@ namespace Sun.Api.Controllers
             _cityService = cityService;
         }
 
-        // GET api/values
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<string>>> GetAsync()
-        {
-
-
-            //HttpClient client = new HttpClient();
-            //client.Timeout = new TimeSpan(0, 2, 0);
-
-            //var request = new HttpRequestMessage
-            //{
-            //    Method = HttpMethod.Get,
-            //    RequestUri = new Uri("http://api.openweathermap.org/data/2.5/forecast?q=brusque,br&appId=31cea044be81ac381a55a8e2ada47788&units=metric")
-
-            //};
-            ////http://api.openweathermap.org/data/2.5/forecast?q=brusque,br&appId=31cea044be81ac381a55a8e2ada47788&units=metric
-            ////http://api.openweathermap.org/data/2.5/forecast?q={RestOptions.City},{RestOptions.Country}&appId={ApiKey}&units=metric
-            //var answer = await client.SendAsync(request).ConfigureAwait(false);
-            //answer.EnsureSuccessStatusCode();
-            //var responseBody = await answer.Content.ReadAsStringAsync().ConfigureAwait(false);
-            //var json = JsonConvert.DeserializeObject<OpenWeatherModel>(responseBody);
-            _cityService.Add(new CityViewModel { Id = Guid.NewGuid(), Name = "teste" });
-            return new string[] { "value1", "value2" };
-        }
-
         // GET api/values/5
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)

@@ -11,6 +11,7 @@ namespace Sun.Infra.CrossCutting.IoC
         public static void RegisterServices(IServiceCollection services)
         {
             services.AddScoped<ICityRepository, CityRepository>();
+            services.AddScoped<IWeatherRepository, WeatherRepository>();
             services.AddScoped<SunContext>();
 
             services.AddScoped<ICityAppService, CityAppService>();

@@ -9,6 +9,7 @@ namespace Sun.Application
         public ViewModelToDomainMappingProfile()
         {
             CreateMap<CityViewModel, City>();
+            CreateMap<WeatherViewModel, Weather>();
         }
     }
 }

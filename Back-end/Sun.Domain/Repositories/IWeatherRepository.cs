@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Sun.Domain
 {
     public interface IWeatherRepository : IRepository<Weather>
     {
-        Weather GetByDate(DateTime date);
+        IQueryable<Weather> GetByCityId(Guid IdCity);
     }
 }

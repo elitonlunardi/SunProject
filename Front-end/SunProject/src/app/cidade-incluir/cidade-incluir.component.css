@@ -1,0 +1,9 @@
+.form-shadow{
+    padding: 50px;
+    margin-top : 20px;
+    box-shadow: 3px 3px 3px 3px rgb(194, 194, 194);
+}
+
+.margin{
+    margin-bottom: 35px;
+}

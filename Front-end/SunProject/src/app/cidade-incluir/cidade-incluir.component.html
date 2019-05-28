@@ -1,10 +1,26 @@
-<div class="container">
-
-  <form class="form-group" novalidate>
+<!-- <div class="container">
+  <form  [formGroup]="form"  novalidate (ngSubmit)="onSubmit()">
     <div class="row">
-      <label></label>
-      <input type="text" class="form-group" id="cidade">
-      <button type="submit" class="btn btn-primary">Cadastrar</button>
+      <div class="col-md-6"></div>
+      <div class="form-group form-shadow">
+        <label for="cidade">Nome da cidade:</label>
+        <input type="text" class="form-control" id="cidade" formControlName="Name">
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+      </div>
     </div>
+  </form>
+</div> -->
+
+<div class="row">
+  <div class="col-xl-4"></div>
+  <!-- <h1 class="display-4">Display 4</h1> -->
+  <form [formGroup]="form" class="form-shadow" (ngSubmit)="onSubmit()" novalidate>
+    <h4 class="margin">Digite o nome de uma cidade para ser cadastrada</h4>
+    <div class="form-group">
+      <label for="cidade">Nome da cidade</label>
+      <input type="text" class="form-control" id="cidade" placeholder="Ascurra" formControlName="Name">
+    </div>
+    <button [disabled]="!form.valid || form.pristine" type="submit"
+      class="btn btn-outline-primary btn-sm">Cadastrar</button>
   </form>
 </div>

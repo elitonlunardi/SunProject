@@ -1,0 +1,24 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left">Detalhes da cidade</h4>
+</div>
+<div class="modal-body modal-lg">
+  <div class="container">
+    <div class="row space align-middle">
+      <table class=" table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Data da temperatura</th>
+            <th scope="col">Média esperada</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let temp of temps">
+            <td>{{temp.date | date:'dd/MM/yyyy' }} </td>
+            <td>{{temp.media.toFixed(2)  }}°C</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>

@@ -1,6 +1,9 @@
 ﻿using Sun.Domain;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using System.Collections;
+using System;
+using System.Collections.Generic;
 
 namespace Sun.Infra.Data
 {

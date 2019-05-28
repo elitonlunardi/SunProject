@@ -9,6 +9,7 @@ namespace Sun.Application
         void Add(CityViewModel cityViewModel);
         void Update(CityViewModel cityViewModel);
         void Remove(Guid id);
+        IEnumerable<WeatherViewModel> GetWeatherIdCity(string id);
         IEnumerable<CityViewModel> GetAll();
     }
 }
